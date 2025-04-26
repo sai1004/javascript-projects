@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f0f0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      .app {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      }
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="app">
+      <div class="container">
+        <p>Counter: <span id="count">0</span></p>
+        <button id="increase">Increase</button>
+        <button id="decrease">Decrease</button>
+      </div>
+    </main>
+
+    <script type="text/javascript">
+      const count = document.getElementById("count");
+      let currentCount = parseInt(count.innerText) || 0;
+
+      document.getElementById("increase").addEventListener("click", () => {
+        currentCount += 1;
+        count.textContent = currentCount;
+      });
+
+      document.getElementById("decrease").addEventListener("click", () => {
+        if (currentCount > 0) {
+          currentCount -= 1;
+          count.textContent = currentCount;
+        } else {
+          alert("Counter cannot go below zero.");
+        }
+      });
+    </script>
+  </body>
+</html>

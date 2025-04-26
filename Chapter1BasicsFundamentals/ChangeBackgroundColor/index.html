@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .bg-color {
+        background-color: #e15656;
+      }
+    </style>
+  </head>
+  <body>
+    <main class="app">
+      <div class="container">
+        <button id="button">Change Color</button>
+      </div>
+    </main>
+    <script>
+      const button = document.getElementById("button");
+      button.addEventListener("click", () => {
+        document.body.classList.toggle("bg-color");
+      });
+    </script>
+  </body>
+</html>
