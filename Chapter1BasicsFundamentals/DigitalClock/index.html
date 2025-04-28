@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background-color: #282c34;
+        font-family: Arial, sans-serif;
+        color: white;
+      }
+
+      .header {
+        padding: 20px;
+        text-align: center;
+      }
+
+      .app {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .container {
+        text-align: center;
+        font-size: 5rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="header">
+      <h1>Clock APP</h1>
+    </div>
+    <div class="app">
+      <div class="container">
+        <h3 id="time"></h3>
+      </div>
+    </div>
+
+    <script>
+      let timeEle = document.getElementById("time");
+
+      function updateTimer() {
+        let intervel;
+
+        if (intervel) {
+          clearInterval(intervel);
+        }
+
+        intervel = setInterval(() => {
+          let date = new Date();
+          let hours = date.getHours();
+          let minutes = date.getMinutes();
+          let seconds = date.getSeconds();
+          timeEle.textContent = `${hours < 10 ? "0" + hours : hours}:${
+            minutes < 10 ? "0" + minutes : minutes
+          }:${seconds < 10 ? "0" + seconds : seconds}`;
+        }, 1000);
+      }
+
+      updateTimer();
+    </script>
+  </body>
+</html>
