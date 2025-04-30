@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+      }
+
+      h3 {
+        margin-bottom: 20px;
+      }
+
+      input {
+        padding: 10px;
+        font-size: 16px;
+        margin-right: 10px;
+      }
+
+      button {
+        padding: 10px 20px;
+        font-size: 16px;
+      }
+
+      p {
+        margin-top: 20px;
+        font-size: 18px;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Even or Odd Checker</h3>
+    <input type="number" id="numberInput" placeholder="Enter a number" />
+    <button id="checkButton">Check</button>
+    <p id="result"></p>
+
+    <script>
+      const inputFiled = document.getElementById("numberInput");
+      const checkButton = document.getElementById("checkButton");
+      const result = document.getElementById("result");
+
+      checkButton.addEventListener("click", checkEvenOrOdd);
+
+      function checkEvenOrOdd() {
+        const number = parseInt(inputFiled.value);
+        if (isNaN(number)) {
+          result.textContent = "Please enter a valid number.";
+          return;
+        }
+        if (number % 2 === 0) {
+          result.textContent = `${number} is an even number.`;
+        } else {
+          result.textContent = `${number} is an odd number.`;
+        }
+      }
+    </script>
+  </body>
+</html>
