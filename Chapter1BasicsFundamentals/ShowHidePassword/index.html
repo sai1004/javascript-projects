@@ -1,59 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-        background-color: #f0f0f0;
-      }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+        <style>
+            body {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background-color: #f0f0f0;
+            }
 
-      input[type="password"] {
-        padding: 10px;
-        font-size: 16px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-      }
-      input[type="text"] {
-        padding: 10px;
-        font-size: 16px;
-        border-radius: 5px;
-        border: 1px solid #ccc;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="main-app">
-      <div class="container">
-        <h3>Show or Hide Password</h3>
-        <div class="input-filed">
-          <label for="password">Password: </label>
-          <input
-            type="password"
-            id="password"
-            placeholder="Enter your password"
-          />
+            input[type="password"] {
+                padding: 10px;
+                font-size: 16px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+            input[type="text"] {
+                padding: 10px;
+                font-size: 16px;
+                border-radius: 5px;
+                border: 1px solid #ccc;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="main-app">
+            <div class="container">
+                <h3>Show or Hide Password</h3>
+                <div class="input-filed">
+                    <label for="password">Password: </label>
+                    <input type="password" id="password" placeholder="Enter your password" />
+                </div>
+                <div class="input-filed">
+                    <input type="checkbox" id="show-password" />
+                    <label for="show-password">Show Password </label>
+                </div>
+            </div>
         </div>
-        <div class="input-filed">
-          <input type="checkbox" id="show-password" />
-          <label for="show-password">Show Password </label>
-        </div>
-      </div>
-    </div>
 
-    <script>
-      const showPassword = document.getElementById("show-password");
-      const password = document.getElementById("password");
-      showPassword.addEventListener("change", function () {
-        showPassword.checked
-          ? password.setAttribute("type", "text")
-          : password.setAttribute("type", "password");
-      });
-    </script>
-  </body>
+        <script>
+            const showPassword = document.getElementById("show-password");
+            const password = document.getElementById("password");
+            showPassword.addEventListener("change", function () {
+                showPassword.checked
+                    ? password.setAttribute("type", "text")
+                    : password.setAttribute("type", "password");
+            });
+        </script>
+    </body>
 </html>
